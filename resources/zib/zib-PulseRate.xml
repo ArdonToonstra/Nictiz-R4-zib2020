@@ -59,7 +59,7 @@
       </slicing>
     </element>
     <element id="Observation.effective[x]:effectiveDateTime">
-      <path value="Observation.effectiveDateTime" />
+      <path value="Observation.effective[x]" />
       <sliceName value="effectiveDateTime" />
       <type>
         <code value="dateTime" />
@@ -81,7 +81,7 @@
       </slicing>
     </element>
     <element id="Observation.value[x]:valueQuantity">
-      <path value="Observation.valueQuantity" />
+      <path value="Observation.value[x]" />
       <sliceName value="valueQuantity" />
       <short value="PulseRateValue" />
       <definition value="The element contains the value of the pulse rate measured. The pulse rate is expressed in the number of tangible pulsations of an artery per minute, usually the a. radialis, a. carotis or a. femoralis." />
@@ -108,6 +108,48 @@
         <identity value="zib-pulserate-v3.3-2020EN" />
         <map value="NL-CM:12.7.4" />
         <comment value="Comment" />
+      </mapping>
+    </element>
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Observation.component:pulseRegularity">
+      <path value="Observation.component" />
+      <sliceName value="pulseRegularity" />
+      <max value="1" />
+    </element>
+    <element id="Observation.component:pulseRegularity.code">
+      <path value="Observation.component.code" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="44969-4" />
+        </coding>
+      </patternCodeableConcept>
+    </element>
+    <element id="Observation.component:pulseRegularity.value[x]">
+      <path value="Observation.component.value[x]" />
+      <short value="PulseRegularity" />
+      <definition value="Regular or irregular rhythm." />
+      <alias value="PolsRegelmatigheid" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.12.7.1--20200901000000" />
+      </binding>
+      <mapping>
+        <identity value="zib-pulserate-v3.3-2020EN" />
+        <map value="NL-CM:12.7.5" />
+        <comment value="PulseRegularity" />
       </mapping>
     </element>
   </differential>
