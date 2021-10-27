@@ -165,6 +165,12 @@ zib-HealthProfessional-PractitionerRole:
     PractitionerRole.telecom:emailAddresses:
       - datatype: ContactPoint
         reason: See PractitionerRole.telecom
+        
+zib-MUSTScore:
+  zib deviations:
+    Observation.note.text:
+      - cardinality: 1..1
+        reason: Observation.note has cardinality 0..1, making the cardinality of Observation.note.text effectively 0..1 as required by the zib.
 
 zib-NameInformation:
   zib deviations:
