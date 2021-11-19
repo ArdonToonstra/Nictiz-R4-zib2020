@@ -224,7 +224,7 @@ zib-HealthProfessional-PractitionerRole:
     PractitionerRole.telecom:emailAddresses:
       - datatype: ContactPoint
         reason: See PractitionerRole.telecom
-        
+
 zib-LivingSituation:
   zib deviations:
     Observation.component:homeAdaption.value[x]:
