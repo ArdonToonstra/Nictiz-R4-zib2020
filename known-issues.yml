@@ -344,7 +344,7 @@ unmapped zib concepts:
 
 issues should occur: false
 
-"*-AdvanceDirective*":
+"*":
   ignored issues:
     Consent.scope*:
       - message: Unknown Code http://terminology.hl7.org/CodeSystem/consentscope#adr in http://terminology.hl7.org/CodeSystem/consentscope for 'http://terminology.hl7.org/CodeSystem/consentscope#adr'
